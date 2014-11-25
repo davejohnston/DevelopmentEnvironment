@@ -19,6 +19,10 @@ class development_environment {
 		email => $email,
 		require => Class['development_environment::user'],
 	}
+
+    class {'development_environment::keys' :
+        require => Class['development_environment::user'],
+    }
 }
 
 include development_environment
